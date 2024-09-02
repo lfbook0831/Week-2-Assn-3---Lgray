@@ -1,18 +1,18 @@
 [
     {
-        "firstname": "Basics",
+        "title": "Basics",
         "link": "https://www.aspcapetinsurance.com/resources/sphynx-cat-breed-information/#:~:text=They%20are%20medium%2Dsized%2C%20weighing,is%20their%20smooth%2C%20hairless%20appearance."
     },
     {
-        "firstname": "Care",
+        "title": "Care",
         "link": "https://www.petmd.com/cat/general-health/hairless-cats"
     },
     {
-        "firstname": "Data",
+        "title": "Data",
         "link": "https://basepaws.com/cat-insider/why-are-sphynx-cats-hairless"
     },
     {
-        "firstname":"MDN Sammy",
+        "title":"MDN Sammy",
         "link":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers"
     }
 ]

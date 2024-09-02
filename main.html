@@ -68,7 +68,7 @@
                 (item,index) => (
                   <li key={index}>
                     <a href={item.link}>
-                      {item.firstname}
+                      {item.title}
                     </a>
                   </li>
                 )
@@ -80,7 +80,7 @@
     }
 
     $.getJSON(
-      'data.json',
+      'info.json',
       function(jsonFromJquery) {
         const myRoot = ReactDOM.createRoot( document.getElementById('myApp') );
         myRoot.render(
