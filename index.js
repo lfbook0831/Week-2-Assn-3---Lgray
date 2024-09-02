@@ -5,14 +5,14 @@ const handleRequest = function(request, response) {
   console.log("Request received for:", request.url);
 
   if (request.url === "/") {
-    fs.readFile(__dirname + "/page.html")
+    fs.readFile(__dirname + "/main.html")
       .then(content => {
         response.setHeader("Content-Type", "text/html; charset=UTF-8");
         response.writeHead(200);
         response.end(content);
       });
   } else {
-    fs.readFile(__dirname + "/data.json")
+    fs.readFile(__dirname + "/info.json")
       .then(content => {
         response.setHeader("Content-Type", "application/json; charset=UTF-8");
         response.writeHead(200);
