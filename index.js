@@ -1,35 +1,31 @@
 const http = require("http");
 const fs = require("fs").promises;
 
-const requestListener = function(req, res) {
-  console.log(req.url);
+const handleRequest = function(request, response) {
+  console.log("Request received for:", request.url);
 
-  if (req.url === "/") {
+  if (request.url === "/") {
     fs.readFile(__dirname + "/page.html")
-      .then(contents => {
-        res.setHeader("Content-Type", "text/html; charset=UTF-8");
-        res.writeHead(200);
-        res.end(contents);
+      .then(content => {
+        response.setHeader("Content-Type", "text/html; charset=UTF-8");
+        response.writeHead(200);
+        response.end(content);
       });
   } else {
     fs.readFile(__dirname + "/data.json")
-      .then(contents => {
-        res.setHeader("Content-Type", "application/json; charset=UTF-8");
-        res.writeHead(200);
-        res.end(contents);
+      .then(content => {
+        response.setHeader("Content-Type", "application/json; charset=UTF-8");
+        response.writeHead(200);
+        response.end(content);
       });
   }
 };
 
-const server = http.createServer(requestListener);
+const server = http.createServer(handleRequest);
 
-const host = "127.0.0.1";
+const hostname = "127.0.0.1";
 const port = 3000;
 
-server.listen(
-  port,
-  host,
-  () => {
-    console.log('Server is running');
-  }
-);
+server.listen(port, hostname, () => {
+  console.log(`Server is running at http://${hostname}:${port}/`);
+});

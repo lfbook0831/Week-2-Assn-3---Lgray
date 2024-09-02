@@ -2,17 +2,50 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>React Import External JSON</title>
+	<title>All About Sphynx Cats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
 	<style>
+		body {
+			font-family: 'Hachi Maru Pop', cursive;
+			background-color: white;
+			color: black;
+			margin: 0;
+			padding: 20px;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 2.5em;
+			font-weight: bold;
+		}
+
 		ol {
 			margin: 0;
 			padding: 0;
 			list-style-type: none;
+			text-align: center;
 		}
 
 		li {
 			display: inline-block;
-      padding: 20px;
+			margin: 15px;
+		}
+
+		a {
+			font-weight: bold;
+			text-decoration: none;
+			color: black;
+			padding: 10px 20px;
+			border-radius: 25px;
+			background-color: #f0f0f0;
+			border: 2px solid #ccc;
+			display: block;
+		}
+
+		a:hover {
+			background-color: #ddd;
 		}
 	</style>
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -21,7 +54,7 @@
   <script src="https://unpkg.com/@babel/standalone@7.22.10/babel.min.js"></script>
 </head>
 <body>
-  <h1>Hello World!</h1>
+  <h1>The Magestic Sphynx</h1>
 	<div id="myApp"></div>
   <script type="text/babel">
     "use strict";
@@ -47,7 +80,7 @@
     }
 
     $.getJSON(
-      'x',
+      'data.json',
       function(jsonFromJquery) {
         const myRoot = ReactDOM.createRoot( document.getElementById('myApp') );
         myRoot.render(
